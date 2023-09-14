@@ -20,9 +20,13 @@ app.get('/api/notes', (req, res) => {
 
 // Define route for homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+// Define notes page route
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'));
+});
 // Define catch all route
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
